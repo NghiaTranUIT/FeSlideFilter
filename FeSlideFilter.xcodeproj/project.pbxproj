@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
+		BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A9194890A9005069F4 /* CoreGraphics.framework */; };
+		BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
+		BACB37B2194890A9005069F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACB37B0194890A9005069F4 /* InfoPlist.strings */; };
+		BACB37B4194890A9005069F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37B3194890A9005069F4 /* main.m */; };
+		BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37B7194890A9005069F4 /* FeAppDelegate.m */; };
+		BACB37BB194890A9005069F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACB37B9194890A9005069F4 /* Main.storyboard */; };
+		BACB37BE194890A9005069F4 /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37BD194890A9005069F4 /* FeViewController.m */; };
+		BACB37C0194890A9005069F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACB37BF194890A9005069F4 /* Images.xcassets */; };
+		BACB37C7194890A9005069F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37C6194890A9005069F4 /* XCTest.framework */; };
+		BACB37C8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
+		BACB37C9194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
+		BACB37D1194890A9005069F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACB37CF194890A9005069F4 /* InfoPlist.strings */; };
+		BACB37D3194890A9005069F4 /* FeSlideFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37D2194890A9005069F4 /* FeSlideFilterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BACB37CA194890A9005069F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BACB379C194890A9005069F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BACB37A3194890A9005069F4;
+			remoteInfo = FeSlideFilter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BACB37A4194890A9005069F4 /* FeSlideFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeSlideFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACB37A7194890A9005069F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BACB37A9194890A9005069F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BACB37AB194890A9005069F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BACB37AF194890A9005069F4 /* FeSlideFilter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeSlideFilter-Info.plist"; sourceTree = "<group>"; };
+		BACB37B1194890A9005069F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BACB37B3194890A9005069F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BACB37B5194890A9005069F4 /* FeSlideFilter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeSlideFilter-Prefix.pch"; sourceTree = "<group>"; };
+		BACB37B6194890A9005069F4 /* FeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeAppDelegate.h; sourceTree = "<group>"; };
+		BACB37B7194890A9005069F4 /* FeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeAppDelegate.m; sourceTree = "<group>"; };
+		BACB37BA194890A9005069F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BACB37BC194890A9005069F4 /* FeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
+		BACB37BD194890A9005069F4 /* FeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
+		BACB37BF194890A9005069F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BACB37C5194890A9005069F4 /* FeSlideFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeSlideFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACB37C6194890A9005069F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BACB37CE194890A9005069F4 /* FeSlideFilterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeSlideFilterTests-Info.plist"; sourceTree = "<group>"; };
+		BACB37D0194890A9005069F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BACB37D2194890A9005069F4 /* FeSlideFilterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeSlideFilterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BACB37A1194890A9005069F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */,
+				BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */,
+				BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACB37C2194890A9005069F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37C7194890A9005069F4 /* XCTest.framework in Frameworks */,
+				BACB37C9194890A9005069F4 /* UIKit.framework in Frameworks */,
+				BACB37C8194890A9005069F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BACB379B194890A9005069F4 = {
+			isa = PBXGroup;
+			children = (
+				BACB37AD194890A9005069F4 /* FeSlideFilter */,
+				BACB37CC194890A9005069F4 /* FeSlideFilterTests */,
+				BACB37A6194890A9005069F4 /* Frameworks */,
+				BACB37A5194890A9005069F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BACB37A5194890A9005069F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37A4194890A9005069F4 /* FeSlideFilter.app */,
+				BACB37C5194890A9005069F4 /* FeSlideFilterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BACB37A6194890A9005069F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37A7194890A9005069F4 /* Foundation.framework */,
+				BACB37A9194890A9005069F4 /* CoreGraphics.framework */,
+				BACB37AB194890A9005069F4 /* UIKit.framework */,
+				BACB37C6194890A9005069F4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BACB37AD194890A9005069F4 /* FeSlideFilter */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37B6194890A9005069F4 /* FeAppDelegate.h */,
+				BACB37B7194890A9005069F4 /* FeAppDelegate.m */,
+				BACB37B9194890A9005069F4 /* Main.storyboard */,
+				BACB37BC194890A9005069F4 /* FeViewController.h */,
+				BACB37BD194890A9005069F4 /* FeViewController.m */,
+				BACB37BF194890A9005069F4 /* Images.xcassets */,
+				BACB37AE194890A9005069F4 /* Supporting Files */,
+			);
+			path = FeSlideFilter;
+			sourceTree = "<group>";
+		};
+		BACB37AE194890A9005069F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37AF194890A9005069F4 /* FeSlideFilter-Info.plist */,
+				BACB37B0194890A9005069F4 /* InfoPlist.strings */,
+				BACB37B3194890A9005069F4 /* main.m */,
+				BACB37B5194890A9005069F4 /* FeSlideFilter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BACB37CC194890A9005069F4 /* FeSlideFilterTests */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37D2194890A9005069F4 /* FeSlideFilterTests.m */,
+				BACB37CD194890A9005069F4 /* Supporting Files */,
+			);
+			path = FeSlideFilterTests;
+			sourceTree = "<group>";
+		};
+		BACB37CD194890A9005069F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37CE194890A9005069F4 /* FeSlideFilterTests-Info.plist */,
+				BACB37CF194890A9005069F4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BACB37A3194890A9005069F4 /* FeSlideFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BACB37D6194890A9005069F4 /* Build configuration list for PBXNativeTarget "FeSlideFilter" */;
+			buildPhases = (
+				BACB37A0194890A9005069F4 /* Sources */,
+				BACB37A1194890A9005069F4 /* Frameworks */,
+				BACB37A2194890A9005069F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FeSlideFilter;
+			productName = FeSlideFilter;
+			productReference = BACB37A4194890A9005069F4 /* FeSlideFilter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BACB37C4194890A9005069F4 /* FeSlideFilterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BACB37D9194890A9005069F4 /* Build configuration list for PBXNativeTarget "FeSlideFilterTests" */;
+			buildPhases = (
+				BACB37C1194890A9005069F4 /* Sources */,
+				BACB37C2194890A9005069F4 /* Frameworks */,
+				BACB37C3194890A9005069F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BACB37CB194890A9005069F4 /* PBXTargetDependency */,
+			);
+			name = FeSlideFilterTests;
+			productName = FeSlideFilterTests;
+			productReference = BACB37C5194890A9005069F4 /* FeSlideFilterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BACB379C194890A9005069F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Fe;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Fe;
+				TargetAttributes = {
+					BACB37C4194890A9005069F4 = {
+						TestTargetID = BACB37A3194890A9005069F4;
+					};
+				};
+			};
+			buildConfigurationList = BACB379F194890A9005069F4 /* Build configuration list for PBXProject "FeSlideFilter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BACB379B194890A9005069F4;
+			productRefGroup = BACB37A5194890A9005069F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BACB37A3194890A9005069F4 /* FeSlideFilter */,
+				BACB37C4194890A9005069F4 /* FeSlideFilterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BACB37A2194890A9005069F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37C0194890A9005069F4 /* Images.xcassets in Resources */,
+				BACB37B2194890A9005069F4 /* InfoPlist.strings in Resources */,
+				BACB37BB194890A9005069F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACB37C3194890A9005069F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37D1194890A9005069F4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BACB37A0194890A9005069F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37B4194890A9005069F4 /* main.m in Sources */,
+				BACB37BE194890A9005069F4 /* FeViewController.m in Sources */,
+				BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACB37C1194890A9005069F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACB37D3194890A9005069F4 /* FeSlideFilterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BACB37CB194890A9005069F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BACB37A3194890A9005069F4 /* FeSlideFilter */;
+			targetProxy = BACB37CA194890A9005069F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BACB37B0194890A9005069F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BACB37B1194890A9005069F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BACB37B9194890A9005069F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BACB37BA194890A9005069F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BACB37CF194890A9005069F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BACB37D0194890A9005069F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BACB37D4194890A9005069F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BACB37D5194890A9005069F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BACB37D7194890A9005069F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
+				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BACB37D8194890A9005069F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
+				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BACB37DA194890A9005069F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FeSlideFilter.app/FeSlideFilter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FeSlideFilterTests/FeSlideFilterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BACB37DB194890A9005069F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FeSlideFilter.app/FeSlideFilter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
+				INFOPLIST_FILE = "FeSlideFilterTests/FeSlideFilterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BACB379F194890A9005069F4 /* Build configuration list for PBXProject "FeSlideFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BACB37D4194890A9005069F4 /* Debug */,
+				BACB37D5194890A9005069F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BACB37D6194890A9005069F4 /* Build configuration list for PBXNativeTarget "FeSlideFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BACB37D7194890A9005069F4 /* Debug */,
+				BACB37D8194890A9005069F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BACB37D9194890A9005069F4 /* Build configuration list for PBXNativeTarget "FeSlideFilterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BACB37DA194890A9005069F4 /* Debug */,
+				BACB37DB194890A9005069F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BACB379C194890A9005069F4 /* Project object */;
+}
