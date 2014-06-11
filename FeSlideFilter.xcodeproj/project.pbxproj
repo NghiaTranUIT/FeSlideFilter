@@ -21,6 +21,7 @@
 		BACB37C9194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
 		BACB37D1194890A9005069F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACB37CF194890A9005069F4 /* InfoPlist.strings */; };
 		BACB37D3194890A9005069F4 /* FeSlideFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37D2194890A9005069F4 /* FeSlideFilterTests.m */; };
+		BACB37E019489C7F005069F4 /* FeSlideFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37DF19489C7F005069F4 /* FeSlideFilterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		BACB37CE194890A9005069F4 /* FeSlideFilterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeSlideFilterTests-Info.plist"; sourceTree = "<group>"; };
 		BACB37D0194890A9005069F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BACB37D2194890A9005069F4 /* FeSlideFilterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeSlideFilterTests.m; sourceTree = "<group>"; };
+		BACB37DE19489C7F005069F4 /* FeSlideFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeSlideFilterView.h; sourceTree = "<group>"; };
+		BACB37DF19489C7F005069F4 /* FeSlideFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeSlideFilterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		BACB37AD194890A9005069F4 /* FeSlideFilter */ = {
 			isa = PBXGroup;
 			children = (
+				BACB37DC194890BC005069F4 /* Source Code */,
 				BACB37B6194890A9005069F4 /* FeAppDelegate.h */,
 				BACB37B7194890A9005069F4 /* FeAppDelegate.m */,
 				BACB37B9194890A9005069F4 /* Main.storyboard */,
@@ -150,6 +154,23 @@
 				BACB37CF194890A9005069F4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BACB37DC194890BC005069F4 /* Source Code */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37DD194890CE005069F4 /* FeSlideFilterView */,
+			);
+			name = "Source Code";
+			sourceTree = "<group>";
+		};
+		BACB37DD194890CE005069F4 /* FeSlideFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37DE19489C7F005069F4 /* FeSlideFilterView.h */,
+				BACB37DF19489C7F005069F4 /* FeSlideFilterView.m */,
+			);
+			name = FeSlideFilterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +274,7 @@
 				BACB37B4194890A9005069F4 /* main.m in Sources */,
 				BACB37BE194890A9005069F4 /* FeViewController.m in Sources */,
 				BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */,
+				BACB37E019489C7F005069F4 /* FeSlideFilterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +481,7 @@
 				BACB37D8194890A9005069F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BACB37D9194890A9005069F4 /* Build configuration list for PBXNativeTarget "FeSlideFilterTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +490,7 @@
 				BACB37DB194890A9005069F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
