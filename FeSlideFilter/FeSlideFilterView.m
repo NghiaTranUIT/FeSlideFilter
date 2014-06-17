@@ -444,8 +444,6 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
         _currentState = FeSlideFilterViewStateNone;
     }
     
-    NSLog(@"end decelerating at %ld",(long)_currentIndex);
-    
     // Delegate
     if ([_delegate respondsToSelector:@selector(FeSlideFilterView:didEndSlideFilterAtIndex:)])
     {
