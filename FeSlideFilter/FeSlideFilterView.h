@@ -25,6 +25,9 @@
 // Current index
 @property (assign,readonly, nonatomic) NSInteger currentIndex;
 
+//Done Btn
+@property (strong, nonatomic) UIButton *doneBtn;
+
 // Reload
 -(void) reloadFilter;
 @end
@@ -45,7 +48,10 @@
 //////////////
 // Protocol - Delegate
 @protocol FeSlideFilterViewDelegate <NSObject>
-
-
+@optional
+-(void) FeSlideFilterView:(FeSlideFilterView *) sender didTapDoneButtonAtIndex:(NSInteger) index;
+-(BOOL) FeSlideFilterView:(FeSlideFilterView *)sender shouldSlideFilterAtIndex:(NSInteger) index;
+-(void) FeSlideFilterView:(FeSlideFilterView *)sender didBeginSlideFilterAtIndex:(NSInteger) index;
+-(void) FeSlideFilterView:(FeSlideFilterView *)sender didEndSlideFilterAtIndex:(NSInteger) index;
 @end
 

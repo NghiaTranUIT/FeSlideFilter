@@ -44,6 +44,8 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 -(void) initBackLayer;
 -(void) initMaskLayer;
 -(void) initScrollView;
+-(void) initDoneButton;
+
 -(void) configureSlideFilterView;
 -(void) configureScrollView;
 -(void) configureLayer;
@@ -57,6 +59,10 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 -(void) prepareSlideFilterWithScrollView:(UIScrollView *) scrollView;
 -(void) handleSlideFilterWithScroll:(UIScrollView *) scrollView;
 -(void) finishSlideFilterWithScrollView:(UIScrollView *) scrollView;
+
+// Dont Btn
+-(void) doneBtnTapped:(UIButton *) sender;
+
 @end
 
 @implementation FeSlideFilterView
@@ -123,6 +129,17 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     _scrollView.delegate = self;
     
     [self addSubview:_scrollView];
+}
+-(void) initDoneButton
+{
+    // Add subView
+    if (!_doneBtn.superview)
+    {
+        [self addSubview:_doneBtn];
+    }
+    
+    // Add target
+    [_doneBtn addTarget:self action:@selector(doneBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 -(void) configureSlideFilterView
 {
@@ -217,6 +234,24 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     
     [self reloadFilter];
 }
+-(void) setDoneBtn:(UIButton *)doneBtn
+{
+    if (_doneBtn == doneBtn)
+        return;
+    
+    _doneBtn = doneBtn;
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        _doneBtn.center = CGPointMake(self.bounds.size.width - 30,self.bounds.size.height - 30);
+    }
+    else
+    {
+        _doneBtn.center = CGPointMake(self.bounds.size.width - 50,self.bounds.size.height - 50);
+    }
+    
+    
+    [self initDoneButton];
+}
 -(void) reloadFilter
 {
     [self configureSlideFilterView];
@@ -245,6 +280,14 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 #pragma mark - Handler
 -(void) prepareSlideFilterWithScrollView:(UIScrollView *)scrollView
 {
+    if ([_delegate respondsToSelector:@selector(FeSlideFilterView:shouldSlideFilterAtIndex:)])
+    {
+        BOOL isShouldSlide = [_delegate FeSlideFilterView:self shouldSlideFilterAtIndex:_currentIndex];
+        
+        if (isShouldSlide == NO)
+            return;
+    }
+    
     CGPoint velocity = [_scrollView.panGestureRecognizer velocityInView:self];
     
     if (_currentIndex == 0 && _currentPosition == FeSlideFilterViewPositionStart && _currentState == FeSlideFilterViewStateNone)
@@ -332,6 +375,13 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 
         }
     }
+    
+    // Delegate
+    if ([_delegate respondsToSelector:@selector(FeSlideFilterView:didBeginSlideFilterAtIndex:)])
+    {
+        [_delegate FeSlideFilterView:self didBeginSlideFilterAtIndex:_currentIndex];
+    }
+    
 }
 -(void) handleSlideFilterWithScroll:(UIScrollView *)scrollView
 {
@@ -395,5 +445,20 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     }
     
     NSLog(@"end decelerating at %ld",(long)_currentIndex);
+    
+    // Delegate
+    if ([_delegate respondsToSelector:@selector(FeSlideFilterView:didEndSlideFilterAtIndex:)])
+    {
+        [_delegate FeSlideFilterView:self didEndSlideFilterAtIndex:_currentIndex];
+    }
+}
+
+#pragma mark - Done Btn
+-(void) doneBtnTapped:(UIButton *)sender
+{
+    if ([_delegate respondsToSelector:@selector(FeSlideFilterView:didTapDoneButtonAtIndex:)])
+    {
+        [_delegate FeSlideFilterView:self didTapDoneButtonAtIndex:_currentIndex];
+    }
 }
 @end

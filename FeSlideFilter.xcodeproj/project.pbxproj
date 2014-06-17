@@ -21,6 +21,8 @@
 		BA626DCD1950516700FE40EC /* sample@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DCB1950516700FE40EC /* sample@2x.jpg */; };
 		BA626DD71950758E00FE40EC /* sample_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DD51950758E00FE40EC /* sample_iPad.jpg */; };
 		BA626DD81950758E00FE40EC /* sample_iPad@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DD61950758E00FE40EC /* sample_iPad@2x.jpg */; };
+		BA626DDC195078ED00FE40EC /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DDA195078ED00FE40EC /* done.png */; };
+		BA626DDD195078ED00FE40EC /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DDB195078ED00FE40EC /* done@2x.png */; };
 		BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
 		BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A9194890A9005069F4 /* CoreGraphics.framework */; };
 		BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
@@ -64,6 +66,8 @@
 		BA626DCB1950516700FE40EC /* sample@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sample@2x.jpg"; sourceTree = "<group>"; };
 		BA626DD51950758E00FE40EC /* sample_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample_iPad.jpg; sourceTree = "<group>"; };
 		BA626DD61950758E00FE40EC /* sample_iPad@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sample_iPad@2x.jpg"; sourceTree = "<group>"; };
+		BA626DDA195078ED00FE40EC /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		BA626DDB195078ED00FE40EC /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
 		BACB37A4194890A9005069F4 /* FeSlideFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeSlideFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACB37A7194890A9005069F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BACB37A9194890A9005069F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,6 +154,8 @@
 		BA626DB219504F2700FE40EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BA626DDA195078ED00FE40EC /* done.png */,
+				BA626DDB195078ED00FE40EC /* done@2x.png */,
 				BA626DB419504F3100FE40EC /* Filter LUT */,
 				BA626DB319504F2D00FE40EC /* Photo */,
 				BA626DB119504F1F00FE40EC /* Category */,
@@ -369,8 +375,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA626DDD195078ED00FE40EC /* done@2x.png in Resources */,
 				BA626DC01950508D00FE40EC /* filter_lut_3.png in Resources */,
 				BA626DCD1950516700FE40EC /* sample@2x.jpg in Resources */,
+				BA626DDC195078ED00FE40EC /* done.png in Resources */,
 				BA626DD81950758E00FE40EC /* sample_iPad@2x.jpg in Resources */,
 				BA626DA519504D8800FE40EC /* Main_iPhone.storyboard in Resources */,
 				BA626DD71950758E00FE40EC /* sample_iPad.jpg in Resources */,

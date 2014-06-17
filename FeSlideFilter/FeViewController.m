@@ -115,9 +115,16 @@
     _slideFilterView.delegate = self;
     
     [self.view addSubview:_slideFilterView];
+    
+    // Btn
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 40, 40);
+    [btn setBackgroundImage:[UIImage imageNamed:@"done"] forState:UIControlStateNormal];
+    
+    _slideFilterView.doneBtn = btn;
 }
 
-#pragma mark - 
+#pragma mark - Delegate / Data Source
 -(NSInteger) numberOfFilter
 {
     return 5;
@@ -130,7 +137,10 @@
 {
     return _arrPhoto[index];
 }
-
+-(void) FeSlideFilterView:(FeSlideFilterView *)sender didTapDoneButtonAtIndex:(NSInteger)index
+{
+    NSLog(@"did tap at index = %ld",(long)index);
+}
 #pragma mark - Private
 -(UIImage *) imageDependOnDevice
 {
