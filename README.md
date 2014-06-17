@@ -3,9 +3,9 @@ FeSlideFilter
 
 Filter with own way !
 
-Review Youtube : 
-
 [![IMAGE ALT TEXT HERE](http://nghiatran.me/wp-content/uploads/2014/06/FeSlideFilter_Preview.jpg)](https://www.youtube.com/watch?v=KUN6bs9pl74&feature=youtu.be)
+
+Youtube : https://www.youtube.com/watch?v=KUN6bs9pl74&feature=youtu.be
 
 ## In Brief
 FeSlideFilterView is subclass UIView. Bring new way to display your photo.
