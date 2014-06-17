@@ -12,8 +12,16 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
     FeSlideFilterViewPositionEnd,
     FeSlideFilterViewPositionMid
 };
+typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
+    FeSlideFilterViewStateScrollingToLeft,
+    FeSlideFilterViewStateScrollingToRight,
+    FeSlideFilterViewStateNone
+};
 
 @interface FeSlideFilterView () <UIScrollViewDelegate>
+{
+    CGPoint startPoint;
+}
 // Front Layer
 @property (strong, nonatomic) CALayer *frontLayer;
 
@@ -28,6 +36,9 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
 
 // Position
 @property (assign, nonatomic) FeSlideFilterViewPosition currentPosition;
+
+// State
+@property (assign, nonatomic) FeSlideFilterViewState currentState;
 
 /////////////////////
 // Init
@@ -48,7 +59,7 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
 @implementation FeSlideFilterView
 
 #pragma mark - Init
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -71,6 +82,8 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
 {
     _currentIndex = 0;
     _currentPosition = FeSlideFilterViewPositionStart;
+    _currentState = FeSlideFilterViewStateNone;
+    
 }
 -(void) initFrontLayer
 {
@@ -150,6 +163,10 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
         [_scrollView addSubview:titleFilter];
     }
     
+    //Paging
+    _scrollView.pagingEnabled = YES;
+    
+    [self addSubview:_scrollView];
 }
 -(void) configureLayer
 {
@@ -164,7 +181,7 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
         _backLayer.contents = (id) nextImage.CGImage;
         
         // mask
-        _maskLayer.position = CGPointMake(self.bounds.size.width, 0);
+        _maskLayer.position = CGPointMake(0, 0);
         
     }
 }
@@ -181,9 +198,44 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewPosition) {
 #pragma mark - ScrollView Delegate
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    CGPoint velocity = [_scrollView.panGestureRecognizer velocityInView:self];
     
+    if (_currentIndex == 0 && _currentPosition == FeSlideFilterViewPositionStart && _currentState == FeSlideFilterViewStateNone)
+    {
+        if (velocity.x < 0)
+        {
+            // Default
+            _maskLayer.position = CGPointZero;
+            
+            // Position
+            // State
+            _currentState = FeSlideFilterViewStateScrollingToLeft;
+            startPoint = [_scrollView.panGestureRecognizer locationInView:self];
+            
+        }
+    }
 }
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint touchPoint = [_scrollView.panGestureRecognizer locationInView:_scrollView];
+    
+    if (_currentState == FeSlideFilterViewStateScrollingToLeft)
+    {
+        CGFloat denta =  scrollView.contentOffset.x - self.bounds.size.width * _currentIndex;
+        CGFloat percent = denta / self.bounds.size.width;
+        
+        // Adjust mask's frame
+        if (percent >= 0 && percent <= 1)
+        {
+            _maskLayer.frame = CGRectMake(0 - percent * self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
+        }
+    }
+}
+-(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     
 }

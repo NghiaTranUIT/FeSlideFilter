@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA626DA519504D8800FE40EC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA626DA419504D8800FE40EC /* Main_iPhone.storyboard */; };
+		BA626DAD19504DF400FE40EC /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA626DAC19504DF400FE40EC /* FeViewController.m */; };
 		BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
 		BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A9194890A9005069F4 /* CoreGraphics.framework */; };
 		BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
 		BACB37B2194890A9005069F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACB37B0194890A9005069F4 /* InfoPlist.strings */; };
 		BACB37B4194890A9005069F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37B3194890A9005069F4 /* main.m */; };
 		BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37B7194890A9005069F4 /* FeAppDelegate.m */; };
-		BACB37BB194890A9005069F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACB37B9194890A9005069F4 /* Main.storyboard */; };
-		BACB37BE194890A9005069F4 /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACB37BD194890A9005069F4 /* FeViewController.m */; };
+		BACB37BB194890A9005069F4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACB37B9194890A9005069F4 /* Main_iPad.storyboard */; };
 		BACB37C0194890A9005069F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACB37BF194890A9005069F4 /* Images.xcassets */; };
 		BACB37C7194890A9005069F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37C6194890A9005069F4 /* XCTest.framework */; };
 		BACB37C8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA626DA419504D8800FE40EC /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		BA626DAB19504DF400FE40EC /* FeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
+		BA626DAC19504DF400FE40EC /* FeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
 		BACB37A4194890A9005069F4 /* FeSlideFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeSlideFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACB37A7194890A9005069F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BACB37A9194890A9005069F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,9 +49,7 @@
 		BACB37B5194890A9005069F4 /* FeSlideFilter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeSlideFilter-Prefix.pch"; sourceTree = "<group>"; };
 		BACB37B6194890A9005069F4 /* FeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeAppDelegate.h; sourceTree = "<group>"; };
 		BACB37B7194890A9005069F4 /* FeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeAppDelegate.m; sourceTree = "<group>"; };
-		BACB37BA194890A9005069F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BACB37BC194890A9005069F4 /* FeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
-		BACB37BD194890A9005069F4 /* FeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
+		BACB37BA194890A9005069F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		BACB37BF194890A9005069F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BACB37C5194890A9005069F4 /* FeSlideFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeSlideFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACB37C6194890A9005069F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA626DA319504D7100FE40EC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BACB37B9194890A9005069F4 /* Main_iPad.storyboard */,
+				BA626DA419504D8800FE40EC /* Main_iPhone.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		BA626DA619504DC600FE40EC /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DA719504DCC00FE40EC /* View Controller */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		BA626DA719504DCC00FE40EC /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DAB19504DF400FE40EC /* FeViewController.h */,
+				BA626DAC19504DF400FE40EC /* FeViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		BACB379B194890A9005069F4 = {
 			isa = PBXGroup;
 			children = (
@@ -115,12 +143,11 @@
 		BACB37AD194890A9005069F4 /* FeSlideFilter */ = {
 			isa = PBXGroup;
 			children = (
+				BA626DA619504DC600FE40EC /* Example */,
+				BA626DA319504D7100FE40EC /* Storyboard */,
 				BACB37DC194890BC005069F4 /* Source Code */,
 				BACB37B6194890A9005069F4 /* FeAppDelegate.h */,
 				BACB37B7194890A9005069F4 /* FeAppDelegate.m */,
-				BACB37B9194890A9005069F4 /* Main.storyboard */,
-				BACB37BC194890A9005069F4 /* FeViewController.h */,
-				BACB37BD194890A9005069F4 /* FeViewController.m */,
 				BACB37BF194890A9005069F4 /* Images.xcassets */,
 				BACB37AE194890A9005069F4 /* Supporting Files */,
 			);
@@ -250,9 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA626DA519504D8800FE40EC /* Main_iPhone.storyboard in Resources */,
 				BACB37C0194890A9005069F4 /* Images.xcassets in Resources */,
 				BACB37B2194890A9005069F4 /* InfoPlist.strings in Resources */,
-				BACB37BB194890A9005069F4 /* Main.storyboard in Resources */,
+				BACB37BB194890A9005069F4 /* Main_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +300,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB37B4194890A9005069F4 /* main.m in Sources */,
-				BACB37BE194890A9005069F4 /* FeViewController.m in Sources */,
 				BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */,
 				BACB37E019489C7F005069F4 /* FeSlideFilterView.m in Sources */,
+				BA626DAD19504DF400FE40EC /* FeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,12 +333,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BACB37B9194890A9005069F4 /* Main.storyboard */ = {
+		BACB37B9194890A9005069F4 /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BACB37BA194890A9005069F4 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		BACB37CF194890A9005069F4 /* InfoPlist.strings */ = {
@@ -405,6 +433,7 @@
 				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
 				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -418,6 +447,7 @@
 				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
 				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
