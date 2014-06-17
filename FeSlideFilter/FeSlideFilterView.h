@@ -24,6 +24,9 @@
 
 // Current index
 @property (assign,readonly, nonatomic) NSInteger currentIndex;
+
+// Reload
+-(void) reloadFilter;
 @end
 
 ////////////////
@@ -33,8 +36,7 @@
 @required
 -(NSInteger) numberOfFilter;
 -(NSString *) FeSlideFilterView:(FeSlideFilterView *) sender titleFilterAtIndex:(NSInteger) index;
--(UIImage *) FeSlideFilterView:(FeSlideFilterView *) sender imageAfterFilterAtIndex:(NSInteger) index;
--(UIImage *) imageOriginal;
+-(UIImage *) FeSlideFilterView:(FeSlideFilterView *) sender imageFilterAtIndex:(NSInteger) index;
 
 @optional
 -(UIFont *) FeSlideFilterView:(FeSlideFilterView *) sender fontForTitleAtIndex:(NSInteger) index;

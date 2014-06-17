@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		BA626DA519504D8800FE40EC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA626DA419504D8800FE40EC /* Main_iPhone.storyboard */; };
 		BA626DAD19504DF400FE40EC /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA626DAC19504DF400FE40EC /* FeViewController.m */; };
+		BA626DB019504F1C00FE40EC /* CIFilter+LUT.m in Sources */ = {isa = PBXBuildFile; fileRef = BA626DAF19504F1C00FE40EC /* CIFilter+LUT.m */; };
+		BA626DB819504F5000FE40EC /* filter_lut_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DB619504F5000FE40EC /* filter_lut_1.png */; };
+		BA626DC01950508D00FE40EC /* filter_lut_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DBC1950508D00FE40EC /* filter_lut_3.png */; };
+		BA626DC11950508D00FE40EC /* filter_lut_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DBD1950508D00FE40EC /* filter_lut_2.png */; };
+		BA626DC21950508D00FE40EC /* filter_lut_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA626DBE1950508D00FE40EC /* filter_lut_4.png */; };
+		BA626DC51950510D00FE40EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA626DC41950510D00FE40EC /* QuartzCore.framework */; };
+		BA626DC71950511100FE40EC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA626DC61950511100FE40EC /* OpenGLES.framework */; };
+		BA626DC91950511600FE40EC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA626DC81950511500FE40EC /* CoreImage.framework */; };
+		BA626DCC1950516700FE40EC /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DCA1950516700FE40EC /* sample.jpg */; };
+		BA626DCD1950516700FE40EC /* sample@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DCB1950516700FE40EC /* sample@2x.jpg */; };
+		BA626DD71950758E00FE40EC /* sample_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DD51950758E00FE40EC /* sample_iPad.jpg */; };
+		BA626DD81950758E00FE40EC /* sample_iPad@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA626DD61950758E00FE40EC /* sample_iPad@2x.jpg */; };
 		BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A7194890A9005069F4 /* Foundation.framework */; };
 		BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37A9194890A9005069F4 /* CoreGraphics.framework */; };
 		BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACB37AB194890A9005069F4 /* UIKit.framework */; };
@@ -39,6 +51,19 @@
 		BA626DA419504D8800FE40EC /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		BA626DAB19504DF400FE40EC /* FeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
 		BA626DAC19504DF400FE40EC /* FeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
+		BA626DAE19504F1C00FE40EC /* CIFilter+LUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+LUT.h"; sourceTree = "<group>"; };
+		BA626DAF19504F1C00FE40EC /* CIFilter+LUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIFilter+LUT.m"; sourceTree = "<group>"; };
+		BA626DB619504F5000FE40EC /* filter_lut_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_1.png; sourceTree = "<group>"; };
+		BA626DBC1950508D00FE40EC /* filter_lut_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_3.png; sourceTree = "<group>"; };
+		BA626DBD1950508D00FE40EC /* filter_lut_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_2.png; sourceTree = "<group>"; };
+		BA626DBE1950508D00FE40EC /* filter_lut_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_4.png; sourceTree = "<group>"; };
+		BA626DC41950510D00FE40EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BA626DC61950511100FE40EC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BA626DC81950511500FE40EC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		BA626DCA1950516700FE40EC /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		BA626DCB1950516700FE40EC /* sample@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sample@2x.jpg"; sourceTree = "<group>"; };
+		BA626DD51950758E00FE40EC /* sample_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample_iPad.jpg; sourceTree = "<group>"; };
+		BA626DD61950758E00FE40EC /* sample_iPad@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sample_iPad@2x.jpg"; sourceTree = "<group>"; };
 		BACB37A4194890A9005069F4 /* FeSlideFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeSlideFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACB37A7194890A9005069F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BACB37A9194890A9005069F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA626DC91950511600FE40EC /* CoreImage.framework in Frameworks */,
+				BA626DC71950511100FE40EC /* OpenGLES.framework in Frameworks */,
+				BA626DC51950510D00FE40EC /* QuartzCore.framework in Frameworks */,
 				BACB37AA194890A9005069F4 /* CoreGraphics.framework in Frameworks */,
 				BACB37AC194890A9005069F4 /* UIKit.framework in Frameworks */,
 				BACB37A8194890A9005069F4 /* Foundation.framework in Frameworks */,
@@ -110,6 +138,63 @@
 			name = "View Controller";
 			sourceTree = "<group>";
 		};
+		BA626DB119504F1F00FE40EC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DAE19504F1C00FE40EC /* CIFilter+LUT.h */,
+				BA626DAF19504F1C00FE40EC /* CIFilter+LUT.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		BA626DB219504F2700FE40EC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DB419504F3100FE40EC /* Filter LUT */,
+				BA626DB319504F2D00FE40EC /* Photo */,
+				BA626DB119504F1F00FE40EC /* Category */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		BA626DB319504F2D00FE40EC /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DCF1950726100FE40EC /* iPad */,
+				BA626DCE1950725200FE40EC /* iPhone */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		BA626DB419504F3100FE40EC /* Filter LUT */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DB619504F5000FE40EC /* filter_lut_1.png */,
+				BA626DBC1950508D00FE40EC /* filter_lut_3.png */,
+				BA626DBD1950508D00FE40EC /* filter_lut_2.png */,
+				BA626DBE1950508D00FE40EC /* filter_lut_4.png */,
+			);
+			name = "Filter LUT";
+			sourceTree = "<group>";
+		};
+		BA626DCE1950725200FE40EC /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DCA1950516700FE40EC /* sample.jpg */,
+				BA626DCB1950516700FE40EC /* sample@2x.jpg */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		BA626DCF1950726100FE40EC /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				BA626DD51950758E00FE40EC /* sample_iPad.jpg */,
+				BA626DD61950758E00FE40EC /* sample_iPad@2x.jpg */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		BACB379B194890A9005069F4 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +217,9 @@
 		BACB37A6194890A9005069F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA626DC81950511500FE40EC /* CoreImage.framework */,
+				BA626DC61950511100FE40EC /* OpenGLES.framework */,
+				BA626DC41950510D00FE40EC /* QuartzCore.framework */,
 				BACB37A7194890A9005069F4 /* Foundation.framework */,
 				BACB37A9194890A9005069F4 /* CoreGraphics.framework */,
 				BACB37AB194890A9005069F4 /* UIKit.framework */,
@@ -143,6 +231,7 @@
 		BACB37AD194890A9005069F4 /* FeSlideFilter */ = {
 			isa = PBXGroup;
 			children = (
+				BA626DB219504F2700FE40EC /* Resource */,
 				BA626DA619504DC600FE40EC /* Example */,
 				BA626DA319504D7100FE40EC /* Storyboard */,
 				BACB37DC194890BC005069F4 /* Source Code */,
@@ -248,6 +337,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Fe;
 				TargetAttributes = {
+					BACB37A3194890A9005069F4 = {
+						DevelopmentTeam = D54Y88Y9CY;
+					};
 					BACB37C4194890A9005069F4 = {
 						TestTargetID = BACB37A3194890A9005069F4;
 					};
@@ -277,10 +369,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA626DC01950508D00FE40EC /* filter_lut_3.png in Resources */,
+				BA626DCD1950516700FE40EC /* sample@2x.jpg in Resources */,
+				BA626DD81950758E00FE40EC /* sample_iPad@2x.jpg in Resources */,
 				BA626DA519504D8800FE40EC /* Main_iPhone.storyboard in Resources */,
+				BA626DD71950758E00FE40EC /* sample_iPad.jpg in Resources */,
 				BACB37C0194890A9005069F4 /* Images.xcassets in Resources */,
+				BA626DC21950508D00FE40EC /* filter_lut_4.png in Resources */,
 				BACB37B2194890A9005069F4 /* InfoPlist.strings in Resources */,
+				BA626DB819504F5000FE40EC /* filter_lut_1.png in Resources */,
+				BA626DC11950508D00FE40EC /* filter_lut_2.png in Resources */,
 				BACB37BB194890A9005069F4 /* Main_iPad.storyboard in Resources */,
+				BA626DCC1950516700FE40EC /* sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +402,7 @@
 				BACB37B4194890A9005069F4 /* main.m in Sources */,
 				BACB37B8194890A9005069F4 /* FeAppDelegate.m in Sources */,
 				BACB37E019489C7F005069F4 /* FeSlideFilterView.m in Sources */,
+				BA626DB019504F1C00FE40EC /* CIFilter+LUT.m in Sources */,
 				BA626DAD19504DF400FE40EC /* FeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,10 +530,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
 				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,10 +547,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeSlideFilter/FeSlideFilter-Prefix.pch";
 				INFOPLIST_FILE = "FeSlideFilter/FeSlideFilter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

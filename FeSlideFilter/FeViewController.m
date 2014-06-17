@@ -8,12 +8,17 @@
 
 #import "FeViewController.h"
 #import "FeSlideFilterView.h"
+#import "CIFilter+LUT.h"
 
 @interface FeViewController () <FeSlideFilterViewDataSource, FeSlideFilterViewDelegate>
 @property (strong, nonatomic) FeSlideFilterView *slideFilterView;
+@property (strong, nonatomic) NSMutableArray *arrPhoto;
+@property (strong, nonatomic) NSArray *arrTittleFilter;
 
 ///////////
 -(void) initCommon;
+-(void) initPhotoFilter;
+-(void) initTitle;
 -(void) initFeSlideFilterView;
 @end
 
@@ -35,6 +40,10 @@
     
     [self initCommon];
     
+    [self initPhotoFilter];
+    
+    [self initTitle];
+    
     [self initFeSlideFilterView];
 }
 
@@ -49,9 +58,59 @@
 {
     
 }
+-(void) initPhotoFilter
+{
+    _arrPhoto = [NSMutableArray arrayWithCapacity:5];
+    
+    for (NSInteger i = 0; i < 5; i++)
+    {
+        if (i == 4)
+        {
+            UIImage *image = [self imageDependOnDevice];
+            [_arrPhoto addObject:image];
+        }
+        else
+        {
+            NSString *nameLUT = [NSString stringWithFormat:@"filter_lut_%ld",i + 1];
+            
+            //////////
+            // FIlter with LUT
+            // Load photo
+            UIImage *photo = [self imageDependOnDevice];
+            
+            // Create filter
+            CIFilter *lutFilter = [CIFilter filterWithLUT:nameLUT dimension:64];
+            
+            // Set parameter
+            CIImage *ciImage = [[CIImage alloc] initWithImage:photo];
+            [lutFilter setValue:ciImage forKey:@"inputImage"];
+            CIImage *outputImage = [lutFilter outputImage];
+            
+            CIContext *context = [CIContext contextWithOptions:[NSDictionary dictionaryWithObject:(__bridge id)(CGColorSpaceCreateDeviceRGB()) forKey:kCIContextWorkingColorSpace]];
+            
+            UIImage *newImage = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
+            
+            
+            [_arrPhoto addObject:newImage];
+        }
+    }
+}
+-(void) initTitle
+{
+    _arrTittleFilter = @[@"Los Angeles",@"Paris",@"London",@"Rio",@"Original"];
+}
 -(void) initFeSlideFilterView
 {
-    _slideFilterView = [[FeSlideFilterView alloc] initWithFrame:CGRectMake(0, 0, 536, 320)];
+    CGRect frame;
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        frame = CGRectMake(0, 0, 480, 320);
+    }
+    else
+    {
+        frame = CGRectMake(0, 0, 1024, 768);
+    }
+    _slideFilterView = [[FeSlideFilterView alloc] initWithFrame:frame];
     _slideFilterView.dataSource = self;
     _slideFilterView.delegate = self;
     
@@ -63,16 +122,28 @@
 {
     return 5;
 }
--(UIImage *) imageOriginal
-{
-    
-}
 -(NSString *) FeSlideFilterView:(FeSlideFilterView *)sender titleFilterAtIndex:(NSInteger)index
 {
-    
+    return _arrTittleFilter[index];
 }
--(UIImage *) FeSlideFilterView:(FeSlideFilterView *)sender imageAfterFilterAtIndex:(NSInteger)index
+-(UIImage *) FeSlideFilterView:(FeSlideFilterView *)sender imageFilterAtIndex:(NSInteger)index
 {
+    return _arrPhoto[index];
+}
+
+#pragma mark - Private
+-(UIImage *) imageDependOnDevice
+{
+    UIImage *imageOriginal;
     
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        imageOriginal = [UIImage imageNamed:@"sample.jpg"];
+    }
+    else
+    {
+        imageOriginal = [UIImage imageNamed:@"sample_iPad.jpg"];
+    }
+    return imageOriginal;
 }
 @end

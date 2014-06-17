@@ -19,9 +19,6 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 };
 
 @interface FeSlideFilterView () <UIScrollViewDelegate>
-{
-    CGPoint startPoint;
-}
 // Front Layer
 @property (strong, nonatomic) CALayer *frontLayer;
 
@@ -54,6 +51,12 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 //////////////
 // Verify
 -(void) verify;
+
+//////////////
+// Handle
+-(void) prepareSlideFilterWithScrollView:(UIScrollView *) scrollView;
+-(void) handleSlideFilterWithScroll:(UIScrollView *) scrollView;
+-(void) finishSlideFilterWithScrollView:(UIScrollView *) scrollView;
 @end
 
 @implementation FeSlideFilterView
@@ -73,8 +76,6 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
         [self initMaskLayer];
         
         [self initScrollView];
-        
-        [self configureSlideFilterView];
     }
     return self;
 }
@@ -154,7 +155,21 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
         titleFilter.textColor = [UIColor whiteColor];
         
         // Font
-        titleFilter.font = [_dataSource FeSlideFilterView:self fontForTitleAtIndex:i];
+        if ([_dataSource respondsToSelector:@selector(FeSlideFilterView:fontForTitleAtIndex:)])
+        {
+            titleFilter.font = [_dataSource FeSlideFilterView:self fontForTitleAtIndex:i];
+        }
+        else
+        {
+            if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+            {
+                titleFilter.font = [UIFont fontWithName:@"Avenir" size:60];
+            }
+            else
+            {
+                titleFilter.font = [UIFont fontWithName:@"Avenir" size:140];
+            }
+        }
         
         // Title
         titleFilter.text = [_dataSource FeSlideFilterView:self titleFilterAtIndex:i];
@@ -173,16 +188,15 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     if (_currentIndex == 0 && _currentPosition == FeSlideFilterViewPositionStart)
     {
         // Front
-        UIImage *originalImage = [_dataSource imageOriginal];
+        UIImage *originalImage = [_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex];
         _frontLayer.contents = (id)originalImage.CGImage;
         
         // Back
-        UIImage *nextImage = [_dataSource FeSlideFilterView:self imageAfterFilterAtIndex:_currentIndex + 1];
+        UIImage *nextImage = [_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex + 1];
         _backLayer.contents = (id) nextImage.CGImage;
         
         // mask
         _maskLayer.position = CGPointMake(0, 0);
-        
     }
 }
 -(void) verify
@@ -190,13 +204,46 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     NSAssert(_dataSource, @"Data source is nil");
     NSAssert([_dataSource conformsToProtocol:@protocol(FeSlideFilterViewDataSource)], @"You must comform Data Source");
     NSAssert([_dataSource respondsToSelector:@selector(numberOfFilter)], @"You must implement NumberOfFilter method");
-    NSAssert([_dataSource respondsToSelector:@selector(FeSlideFilterView:imageAfterFilterAtIndex:)], @"You must implement FeSlideFilterView:imageAfterFilterAtIndex: method");
+    NSAssert([_dataSource respondsToSelector:@selector(FeSlideFilterView:imageFilterAtIndex:)], @"You must implement FeSlideFilterView:imageAfterFilterAtIndex: method");
     NSAssert([_dataSource respondsToSelector:@selector(FeSlideFilterView:titleFilterAtIndex:)], @"You must implement FeSlideFilterView:titleFilterAtIndex: method");
-    NSAssert([_dataSource respondsToSelector:@selector(imageOriginal)], @"You must implement imageOriginal method");
 }
 
+#pragma mark - Getter / setter
+-(void) setDataSource:(id<FeSlideFilterViewDataSource>)dataSource
+{
+    if (_dataSource == dataSource)
+        return;
+    _dataSource = dataSource;
+    
+    [self reloadFilter];
+}
+-(void) reloadFilter
+{
+    [self configureSlideFilterView];
+}
 #pragma mark - ScrollView Delegate
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self prepareSlideFilterWithScrollView:scrollView];
+}
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self handleSlideFilterWithScroll:scrollView];
+}
+-(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self finishSlideFilterWithScrollView:scrollView];
+}
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate)
+    {
+        _scrollView.scrollEnabled = NO;
+    }
+}
+
+#pragma mark - Handler
+-(void) prepareSlideFilterWithScrollView:(UIScrollView *)scrollView
 {
     CGPoint velocity = [_scrollView.panGestureRecognizer velocityInView:self];
     
@@ -205,20 +252,89 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
         if (velocity.x < 0)
         {
             // Default
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
             _maskLayer.position = CGPointZero;
+            
+            // Next
+            _frontLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:0] CGImage];
+            _backLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:1] CGImage];
+            
+            [CATransaction commit];
             
             // Position
             // State
             _currentState = FeSlideFilterViewStateScrollingToLeft;
-            startPoint = [_scrollView.panGestureRecognizer locationInView:self];
             
         }
     }
+    else if ((_currentIndex > 0 && _currentIndex < _numberOfFilter - 1) && _currentPosition == FeSlideFilterViewPositionMid && _currentState == FeSlideFilterViewStateNone)
+    {
+        if (velocity.x < 0)
+        {
+            // Default
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            
+            _maskLayer.position = CGPointZero;
+            
+            // Next
+            _frontLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex] CGImage];
+            _backLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex + 1] CGImage];
+            
+            [CATransaction commit];
+            
+            // Position
+            // State
+            _currentState = FeSlideFilterViewStateScrollingToLeft;
+        }
+        else
+        {
+            // Default
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            
+            // Default position
+            _maskLayer.position = CGPointZero;
+            
+            // Next
+            _frontLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex] CGImage];
+            _backLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex - 1] CGImage];
+            
+            [CATransaction commit];
+            
+            // Position
+            // State
+            _currentState = FeSlideFilterViewStateScrollingToRight;
+            
+        }
+    }
+    else if (_currentIndex == (_numberOfFilter - 1) && _currentPosition == FeSlideFilterViewPositionEnd && _currentState == FeSlideFilterViewStateNone)
+    {
+        if (velocity.x > 0)
+        {
+            // Default
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            
+            // Default position
+            _maskLayer.position = CGPointZero;
+            
+            // Next
+            _frontLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex] CGImage];
+            _backLayer.contents = (id)[[_dataSource FeSlideFilterView:self imageFilterAtIndex:_currentIndex - 1] CGImage];
+            
+            [CATransaction commit];
+            
+            // Position
+            // State
+            _currentState = FeSlideFilterViewStateScrollingToRight;
+
+        }
+    }
 }
--(void) scrollViewDidScroll:(UIScrollView *)scrollView
+-(void) handleSlideFilterWithScroll:(UIScrollView *)scrollView
 {
-    CGPoint touchPoint = [_scrollView.panGestureRecognizer locationInView:_scrollView];
-    
     if (_currentState == FeSlideFilterViewStateScrollingToLeft)
     {
         CGFloat denta =  scrollView.contentOffset.x - self.bounds.size.width * _currentIndex;
@@ -227,16 +343,57 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
         // Adjust mask's frame
         if (percent >= 0 && percent <= 1)
         {
+            // Disable implicit animation
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            
             _maskLayer.frame = CGRectMake(0 - percent * self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
+            
+            [CATransaction commit];
+        }
+    }
+    if (_currentState == FeSlideFilterViewStateScrollingToRight)
+    {
+        CGFloat denta =  self.bounds.size.width * _currentIndex - scrollView.contentOffset.x;
+        CGFloat percent = denta / self.bounds.size.width;
+        
+        // Adjust mask's frame
+        if (percent >= 0 && percent <= 1)
+        {
+            // Disable implicit animation
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            
+            _maskLayer.frame = CGRectMake( percent * self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
+            
+            [CATransaction commit];
         }
     }
 }
--(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+-(void) finishSlideFilterWithScrollView:(UIScrollView *)scrollView
 {
+    _scrollView.scrollEnabled = YES;
     
-}
--(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+    // Change state
+    int page = _scrollView.contentOffset.x / _scrollView.frame.size.width;
+    _currentIndex = page;
     
+    if (_currentIndex == 0)
+    {
+        _currentPosition = FeSlideFilterViewPositionStart;
+        _currentState = FeSlideFilterViewStateNone;
+    }
+    else if (_currentIndex == _numberOfFilter - 1)
+    {
+        _currentPosition = FeSlideFilterViewPositionEnd;
+        _currentState = FeSlideFilterViewStateNone;
+    }
+    else
+    {
+        _currentPosition = FeSlideFilterViewPositionMid;
+        _currentState = FeSlideFilterViewStateNone;
+    }
+    
+    NSLog(@"end decelerating at %ld",(long)_currentIndex);
 }
 @end
