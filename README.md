@@ -3,9 +3,7 @@ FeSlideFilter
 
 Filter with own way !
 
-![GIF](http://mkerala.com/u/di/R0TX/FeSpringFlowLayout.gif)
-
-Youtube : https://www.youtube.com/watch?v=KUN6bs9pl74&feature=youtu.be
+Review Youtube : https://www.youtube.com/watch?v=KUN6bs9pl74&feature=youtu.be
 
 ## In Brief
 FeSlideFilterView is subclass UIView. Bring new way to display your photo.
