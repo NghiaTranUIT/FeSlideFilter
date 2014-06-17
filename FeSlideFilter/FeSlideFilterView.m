@@ -97,6 +97,7 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     // Front
     _frontLayer = [CALayer layer];
     _frontLayer.frame = self.bounds;
+    _frontLayer.contentsGravity = kCAGravityResizeAspectFill;
     
     // Add sublayer
     [self.layer addSublayer:_frontLayer];
@@ -106,6 +107,7 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     // Back
     _backLayer = [CALayer layer];
     _backLayer.frame = self.bounds;
+    _backLayer.contentsGravity = kCAGravityResizeAspectFill;
     
     // Add sublayer
     [self.layer insertSublayer:_backLayer below:_frontLayer];

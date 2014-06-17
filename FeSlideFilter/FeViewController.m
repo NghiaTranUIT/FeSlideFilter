@@ -9,6 +9,7 @@
 #import "FeViewController.h"
 #import "FeSlideFilterView.h"
 #import "CIFilter+LUT.h"
+#define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
 
 @interface FeViewController () <FeSlideFilterViewDataSource, FeSlideFilterViewDelegate>
 @property (strong, nonatomic) FeSlideFilterView *slideFilterView;
@@ -71,7 +72,7 @@
         }
         else
         {
-            NSString *nameLUT = [NSString stringWithFormat:@"filter_lut_%ld",i + 1];
+            NSString *nameLUT = [NSString stringWithFormat:@"filter_lut_%d",i + 1];
             
             //////////
             // FIlter with LUT
@@ -104,7 +105,10 @@
     CGRect frame;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        frame = CGRectMake(0, 0, 480, 320);
+        if (isiPhone5)
+            frame = CGRectMake(0, 0, 568, 320);
+        else
+            frame = CGRectMake(0, 0, 480, 320);
     }
     else
     {
