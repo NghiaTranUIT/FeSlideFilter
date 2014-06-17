@@ -7,13 +7,11 @@ Filter with own way !
 
 Youtube : https://www.youtube.com/watch?v=KUN6bs9pl74&feature=youtu.be
 
-======================
 ## In Brief
 FeSlideFilterView is subclass UIView. Bring new way to display your photo.
 
 You can slide between filter by your touch. Gain more User Exp than nomal way.
 
-======================
 ## Requirement
 FeSpringFlowLayout use UIKit Dynamics to implement.
 
@@ -21,7 +19,6 @@ So You must ensure your project has iOS version more than iOS 7.0.
 
 And compatible with ARC or non-ARC.
 
-======================
 ## Sample code
 
 In Sample code, I user LUT technique to apply filter to photo.
@@ -30,8 +27,6 @@ More info, visist my blog : http://nghiatran.me/index.php/filter-me-color-lookup
 
 If you wanna use LUT, please sure you added Core Image and OpenGL ES framwork to your project.
 
-
-======================
 ## How to use
 FeSlideFilter use Data Source / Delgate pattern like UITableView.
 
@@ -109,7 +104,6 @@ Delegate :
 -(void) FeSlideFilterView:(FeSlideFilterView *)sender didEndSlideFilterAtIndex:(NSInteger) index;
 ```
 
-======================
 ## MIT License
 Copyright (c) 2014 Nghia Tran
 
@@ -119,7 +113,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-======================
 ## Release notes
 Version 1.0
 
