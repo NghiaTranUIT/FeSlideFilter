@@ -37,6 +37,8 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
 // State
 @property (assign, nonatomic) FeSlideFilterViewState currentState;
 
+-(NSString *) getAndVerityKCAContentGravityFromDataSource;
+
 /////////////////////
 // Init
 -(void) initCommon;
@@ -156,6 +158,15 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     
     // Layer and mask
     [self configureLayer];
+    
+    // Set content gravity
+    if ([_dataSource respondsToSelector:@selector(kCAContentGravityForLayer)])
+    {
+        NSString *strContentFravity = [self getAndVerityKCAContentGravityFromDataSource];
+        _frontLayer.contentsGravity = strContentFravity;
+        _backLayer.contentsGravity = strContentFravity;
+    }
+    
 }
 -(void) configureScrollView
 {
@@ -226,7 +237,21 @@ typedef NS_ENUM(NSInteger, FeSlideFilterViewState) {
     NSAssert([_dataSource respondsToSelector:@selector(FeSlideFilterView:imageFilterAtIndex:)], @"You must implement FeSlideFilterView:imageAfterFilterAtIndex: method");
     NSAssert([_dataSource respondsToSelector:@selector(FeSlideFilterView:titleFilterAtIndex:)], @"You must implement FeSlideFilterView:titleFilterAtIndex: method");
 }
+-(NSString *) getAndVerityKCAContentGravityFromDataSource
+{
+    NSString *string = [_dataSource kCAContentGravityForLayer];
+    if (string == nil || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""])
+    {
+        NSLog(@"ERROR : kCAContentGravity property should NOT be nil or empty");
+        NSAssert(NO, @"kCAContentGravity property should NOT be nil or empty");
+        return @"";
+    }
+    else
+    {
+        return string;
+    }
 
+}
 #pragma mark - Getter / setter
 -(void) setDataSource:(id<FeSlideFilterViewDataSource>)dataSource
 {

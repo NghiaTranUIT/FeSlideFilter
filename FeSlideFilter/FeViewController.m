@@ -145,6 +145,10 @@
 {
     NSLog(@"did tap at index = %ld",(long)index);
 }
+-(NSString *) kCAContentGravityForLayer
+{
+    return kCAGravityResizeAspectFill;
+}
 #pragma mark - Private
 -(UIImage *) imageDependOnDevice
 {

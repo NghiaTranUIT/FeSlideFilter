@@ -43,6 +43,7 @@
 
 @optional
 -(UIFont *) FeSlideFilterView:(FeSlideFilterView *) sender fontForTitleAtIndex:(NSInteger) index;
+-(NSString *) kCAContentGravityForLayer;
 @end
 
 //////////////
