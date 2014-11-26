@@ -13,7 +13,6 @@ FeSlideFilterView is subclass UIView. Bring new way to display your photo.
 You can slide between filter by your touch. Gain more User Exp than nomal way.
 
 ## Requirement
-FeSpringFlowLayout use UIKit Dynamics to implement.
 
 So You must ensure your project has iOS version more than iOS 7.0.
 
